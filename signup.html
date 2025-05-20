@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Kmed Global</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="policy-section" style="max-width: 400px; margin-top: 4rem;">
+        <h2>Sign Up</h2>
+        <form>
+            <label for="name">Full Name</label><br>
+            <input type="text" id="name" name="name" required style="width:100%;margin-bottom:1rem;"><br>
+            <label for="email">Email</label><br>
+            <input type="email" id="email" name="email" required style="width:100%;margin-bottom:1rem;"><br>
+            <label for="phone">Phone Number</label><br>
+            <input type="tel" id="phone" name="phone" required style="width:100%;margin-bottom:1rem;"><br>
+            <label for="password">Password</label><br>
+            <input type="password" id="password" name="password" required style="width:100%;margin-bottom:1rem;"><br>
+            <label for="confirm">Confirm Password</label><br>
+            <input type="password" id="confirm" name="confirm" required style="width:100%;margin-bottom:1.5rem;"><br>
+            <button type="submit" class="signup-btn" style="width:100%;">Sign Up</button>
+        </form>
+        <p style="margin-top:1.5rem;">Already have an account? <a href="login.html">Login</a></p>
+    </div>
+</body>
+<script>
+document.querySelector('form').onsubmit = function(e) {
+    e.preventDefault();
+    window.location.href = "login.html";
+};
+</script>
+</html> 

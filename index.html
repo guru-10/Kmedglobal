@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kmed Global - Launching Soon</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo"><img src="logo.png" alt="Kmed Global Logo" class="logo-img"></div>
+            <nav>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#products">Products</a></li>
+                </ul>
+            </nav>
+            <div class="auth-links">
+                <a href="#login" class="login-btn">Login</a>
+                <a href="#signup" class="signup-btn">Sign Up</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="launch-section">
+            <h1>We Are <span class="highlight">Launching Soon!</span></h1>
+            <p>Stay tuned for something amazing from <b>Kmed Global</b>.</p>
+            <div class="countdown" id="countdown">
+                <div><span id="days">19</span><small>Days</small></div>
+                <div><span id="hours">00</span><small>Hours</small></div>
+                <div><span id="minutes">00</span><small>Minutes</small></div>
+                <div><span id="seconds">00</span><small>Seconds</small></div>
+            </div>
+            <form class="notify-form" onsubmit="event.preventDefault(); document.getElementById('notify-success').style.display='block';">
+                <input type="email" placeholder="Enter your email for updates" required>
+                <button type="submit">Notify Me</button>
+            </form>
+            <div id="notify-success" style="display:none;color:#1a73e8;margin-top:10px;font-weight:600;">Thank you! You'll be notified.</div>
+        </section>
+    </main>
+    <footer>
+        <div class="container footer-container">
+            <div class="social-icons">
+                <a href="https://x.com/Kmed_Global?s=09" title="X" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://www.instagram.com/kmed_global?igsh=bmtrcXprd3I4NXd0" title="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.quora.com/profile/Kmed-Global?ch=10&oid=2956201239&share=23d5cb95&srid=53RtWb&target_type=user" title="Quora" target="_blank" rel="noopener"><i class="fab fa-quora"></i></a>
+                <a href="https://www.linkedin.com" title="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.facebook.com/share/1AKKUSyXoT/" title="Facebook" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
+                <a href="https://youtube.com/@kmedglobal?feature=shared" title="YouTube" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="footer-text">&copy; 2025 Kmed Global. All rights reserved. &nbsp;|&nbsp;
+                <a href="terms.html" class="footer-link" target="_blank">Terms & Conditions</a> &nbsp;|&nbsp;
+                <a href="privacy.html" class="footer-link" target="_blank">Privacy Policy</a> &nbsp;|&nbsp;
+                <a href="refund.html" class="footer-link" target="_blank">Refund Policy</a>
+            </div>
+        </div>
+    </footer>
+    <!-- Floating WhatsApp Button -->
+    <div class="whatsapp-float" id="whatsapp-float" onclick="toggleWhatsAppPopup()">
+        <i class="fab fa-whatsapp"></i>
+    </div>
+    <div class="whatsapp-popup" id="whatsapp-popup">
+        <div class="popup-header">
+            <span>Chat with us on WhatsApp</span>
+            <button onclick="toggleWhatsAppPopup()" class="close-btn">&times;</button>
+        </div>
+        <div class="popup-body">
+            <div class="wa-number">+91 90030 42137</div>
+            <a href="https://wa.me/9003042137" target="_blank" rel="noopener" class="wa-chat-btn">
+                <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+            </a>
+        </div>
+    </div>
+    <script>
+    // Countdown Timer
+    // Set countdown to June 7th of the current year, plus 4 days (June 11th)
+    const now = new Date();
+    let launchDate = new Date(now.getFullYear(), 5, 11, 0, 0, 0, 0); // June is month 5 (0-indexed), day 11
+    // If today is after June 11th, set to next year
+    if (now > launchDate) {
+        launchDate = new Date(now.getFullYear() + 1, 5, 11, 0, 0, 0, 0);
+    }
+    function updateCountdown() {
+        const now = new Date();
+        const diff = launchDate - now;
+        if (diff <= 0) {
+            document.getElementById('countdown').innerHTML = '<b>We are live!</b>';
+            return;
+        }
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+        document.getElementById('days').textContent = days.toString().padStart(2, '0');
+        document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+        document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+        document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+    // WhatsApp Popup
+    function toggleWhatsAppPopup() {
+        var popup = document.getElementById('whatsapp-popup');
+        popup.style.display = (popup.style.display === 'block') ? 'none' : 'block';
+    }
+    // Close popup if clicked outside
+    window.addEventListener('click', function(e) {
+        var popup = document.getElementById('whatsapp-popup');
+        var floatBtn = document.getElementById('whatsapp-float');
+        if (popup.style.display === 'block' && !popup.contains(e.target) && !floatBtn.contains(e.target)) {
+            popup.style.display = 'none';
+        }
+    });
+    </script>
+</body>
+</html> 
