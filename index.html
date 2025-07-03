@@ -115,10 +115,10 @@
     // Countdown Timer
     // Set countdown to June 7th of the current year, plus 4 days (June 11th)
     const now = new Date();
-    let launchDate = new Date(now.getFullYear(), 5, 11, 0, 0, 0, 0); // June is month 5 (0-indexed), day 11
+    let launchDate = new Date(now.getFullYear(), 7, 10, 0, 0, 0, 0); // June is month 5 (0-indexed), day 11
     // If today is after June 11th, set to next year
     if (now > launchDate) {
-        launchDate = new Date(now.getFullYear() + 1, 5, 11, 0, 0, 0, 0);
+        launchDate = new Date(now.getFullYear() + 1, 7, 10, 0, 0, 0, 0);
     }
     function updateCountdown() {
         const now = new Date();
