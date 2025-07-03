@@ -18,13 +18,8 @@
                 <ul>
                     <li><a href="#" class="nav-home">Home</a></li>
                     <li><a href="about.html" target="_blank" rel="noopener">About Us</a></li>
-                    <li><a href="#contact" id="contact-link">Contact Us</a></li>
                 </ul>
             </nav>
-            <div class="auth-links">
-                <a href="#login" class="login-btn">Login</a>
-                <a href="#signup" class="signup-btn">Sign Up</a>
-            </div>
         </div>
     </header>
     <main>
@@ -32,7 +27,7 @@
             <h1>We Are <span class="highlight">Launching Soon!</span></h1>
             <p>Stay tuned for something amazing from <b>Kmed Global</b>.</p>
             <div class="countdown" id="countdown">
-                <div><span id="days">30</span><small>Days</small></div>
+                <div><span id="days">19</span><small>Days</small></div>
                 <div><span id="hours">00</span><small>Hours</small></div>
                 <div><span id="minutes">00</span><small>Minutes</small></div>
                 <div><span id="seconds">00</span><small>Seconds</small></div>
@@ -54,10 +49,12 @@
                 <a href="https://www.facebook.com/share/1AKKUSyXoT/" title="Facebook" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
                 <a href="https://youtube.com/@kmedglobal?feature=shared" title="YouTube" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
             </div>
-            <div class="footer-text">&copy; 2025 Kmed Global. All rights reserved. &nbsp;|&nbsp;
+            <div class="footer-text">
+                &copy; 2025 Kmed Global. All rights reserved. &nbsp;|&nbsp;
                 <a href="terms.html" class="footer-link" target="_blank">Terms & Conditions</a> &nbsp;|&nbsp;
                 <a href="privacy.html" class="footer-link" target="_blank">Privacy Policy</a> &nbsp;|&nbsp;
                 <a href="refund.html" class="footer-link" target="_blank">Refund Policy</a>
+                <br><span style="display:inline-block;margin-top:8px;font-size:1.08rem;font-weight:600;">Email: <a href="mailto:support@kmed.com" style="color:#fff;">support@kmed.com</a> &nbsp;|&nbsp; Phone: <a href="tel:9003042137" style="color:#fff;">9003042137</a></span>
             </div>
         </div>
     </footer>
@@ -113,10 +110,10 @@
     </div>
     <script>
     // Countdown Timer
-    // Set countdown to June 7th of the current year, plus 4 days (June 11th)
+    // Set countdown to August 10th of the current year
     const now = new Date();
-    let launchDate = new Date(now.getFullYear(), 7, 10, 0, 0, 0, 0); // June is month 5 (0-indexed), day 11
-    // If today is after June 11th, set to next year
+    let launchDate = new Date(now.getFullYear(), 7, 10, 0, 0, 0, 0); // August is month 7 (0-indexed), day 10
+    // If today is after August 10th, set to next year
     if (now > launchDate) {
         launchDate = new Date(now.getFullYear() + 1, 7, 10, 0, 0, 0, 0);
     }
